@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HudletsLogo } from "@/components/HudletsLogo";
+import { HudPreview } from "@/components/HudPreview";
+import { DownloadMenu } from "@/components/DownloadMenu";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,14 +35,9 @@ function Index() {
           <span className="font-mono text-sm tracking-tight">hudlets</span>
         </a>
         <nav className="flex items-center gap-6 font-mono text-xs text-muted-foreground">
+          <a href="#preview" className="transition-colors hover:text-foreground">preview</a>
           <a href="#features" className="transition-colors hover:text-foreground">features</a>
           <a href="#install" className="transition-colors hover:text-foreground">install</a>
-          <a
-            href="https://github.com"
-            className="transition-colors hover:text-foreground"
-          >
-            github
-          </a>
         </nav>
       </header>
 
@@ -66,24 +63,27 @@ function Index() {
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row">
+          <DownloadMenu />
           <a
-            href="#install"
-            className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 font-mono text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            Download
-          </a>
-          <a
-            href="#features"
+            href="#preview"
             className="inline-flex h-11 items-center justify-center rounded-md border border-border bg-transparent px-6 font-mono text-sm text-foreground transition-colors hover:bg-card"
           >
-            Learn more
+            Try the preview
           </a>
         </div>
 
         <p className="mt-6 font-mono text-xs text-muted-foreground">
-          Fabric · 1.20+ · Java 17
+          Fabric · 1.21 – 1.21.11 · Java 21
         </p>
       </main>
+
+      {/* Interactive HUD preview */}
+      <section
+        id="preview"
+        className="relative z-10 mx-auto max-w-4xl px-6 pb-24"
+      >
+        <HudPreview />
+      </section>
 
       {/* Features */}
       <section
