@@ -55,4 +55,10 @@
       linear-gradient(to bottom, oklch(1 0 0 / 0.04) 1px, transparent 1px);
     background-size: 48px 48px;
   }
+  /* faux-minecraft sky/ground scene for the HUD preview */
+  .hud-stage {
+    background:
+      linear-gradient(to bottom, #4a7bb8 0%, #87b3dd 55%, #5a8a3a 55%, #3d6b25 100%);
+    image-rendering: pixelated;
+  }
 }

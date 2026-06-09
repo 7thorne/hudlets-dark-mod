@@ -126,7 +126,6 @@ export function HudPreview() {
             } ${
               w.accent ? "text-accent" : "text-white"
             } bg-black/50 backdrop-blur-[2px] ring-1 ring-white/0 transition-shadow hover:ring-white/30`}
-            style-text-shadow="0 1px 0 #000"
           >
             {editingId === w.id ? (
               <input
